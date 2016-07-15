@@ -55,15 +55,9 @@ public class FLRegionManager : FLLocationManager {
         return self.regionMonitorStatus[identifier] ?? false
     }
 
-    public func startMonitoringForRegion(region: FLRegion, authorization: CLAuthorizationStatus = .AuthorizedWhenInUse, context: ExecutionContext = QueueContext.main) -> FutureStream<FLRegionState> {
-        let authoriztaionFuture = self.authorize(authorization)
-        authoriztaionFuture.onSuccess(context) {status in
-            self.configuredRegions[region.identifier] = region
-            self.clLocationManager.startMonitoringForRegion(region.clRegion)
-        }
-        authoriztaionFuture.onFailure(context) {error in
-            region.regionPromise.failure(error)
-        }
+    public func startMonitoringForRegion(region: FLRegion, authorization: CLAuthorizationStatus = .Authorized, context: ExecutionContext = QueueContext.main) -> FutureStream<FLRegionState> {
+        self.configuredRegions[region.identifier] = region
+        self.clLocationManager.startMonitoringForRegion(region.clRegion)
         return region.regionPromise.future
     }
 

@@ -34,10 +34,6 @@
 		055120F619F551BB00ED3B74 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055120F519F551BB00ED3B74 /* CoreLocation.framework */; };
 		055120F819F551CB00ED3B74 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055120F719F551CB00ED3B74 /* CoreBluetooth.framework */; };
 		056276091CCD3F0A00F955D7 /* BCErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056276081CCD3F0A00F955D7 /* BCErrors.swift */; };
-		05BF91A31CFBF62700B78B12 /* CLProximityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF91971CFBF62700B78B12 /* CLProximityExtension.swift */; };
-		05BF91A41CFBF62700B78B12 /* FLBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF91981CFBF62700B78B12 /* FLBeacon.swift */; };
-		05BF91A51CFBF62700B78B12 /* FLBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF91991CFBF62700B78B12 /* FLBeaconManager.swift */; };
-		05BF91A61CFBF62700B78B12 /* FLBeaconRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF919A1CFBF62700B78B12 /* FLBeaconRegion.swift */; };
 		05BF91A71CFBF62700B78B12 /* FLCircularRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF919B1CFBF62700B78B12 /* FLCircularRegion.swift */; };
 		05BF91A81CFBF62700B78B12 /* FLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF919C1CFBF62700B78B12 /* FLLocationManager.swift */; };
 		05BF91A91CFBF62700B78B12 /* FLLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF919D1CFBF62700B78B12 /* FLLogger.swift */; };
@@ -81,10 +77,6 @@
 		055120F519F551BB00ED3B74 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		055120F719F551CB00ED3B74 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		056276081CCD3F0A00F955D7 /* BCErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCErrors.swift; sourceTree = "<group>"; };
-		05BF91971CFBF62700B78B12 /* CLProximityExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLProximityExtension.swift; sourceTree = "<group>"; };
-		05BF91981CFBF62700B78B12 /* FLBeacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLBeacon.swift; sourceTree = "<group>"; };
-		05BF91991CFBF62700B78B12 /* FLBeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLBeaconManager.swift; sourceTree = "<group>"; };
-		05BF919A1CFBF62700B78B12 /* FLBeaconRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLBeaconRegion.swift; sourceTree = "<group>"; };
 		05BF919B1CFBF62700B78B12 /* FLCircularRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLCircularRegion.swift; sourceTree = "<group>"; };
 		05BF919C1CFBF62700B78B12 /* FLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLLocationManager.swift; sourceTree = "<group>"; };
 		05BF919D1CFBF62700B78B12 /* FLLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLLogger.swift; sourceTree = "<group>"; };
@@ -234,10 +226,6 @@
 		05BF91961CFBF62700B78B12 /* FutureLocation */ = {
 			isa = PBXGroup;
 			children = (
-				05BF91971CFBF62700B78B12 /* CLProximityExtension.swift */,
-				05BF91981CFBF62700B78B12 /* FLBeacon.swift */,
-				05BF91991CFBF62700B78B12 /* FLBeaconManager.swift */,
-				05BF919A1CFBF62700B78B12 /* FLBeaconRegion.swift */,
 				05BF919B1CFBF62700B78B12 /* FLCircularRegion.swift */,
 				05BF919C1CFBF62700B78B12 /* FLLocationManager.swift */,
 				05BF919D1CFBF62700B78B12 /* FLLogger.swift */,
@@ -308,7 +296,7 @@
 				TargetAttributes = {
 					0551208119F5506000ED3B74 = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = HZEX459C37;
+						DevelopmentTeam = SBD89XZSYG;
 					};
 				};
 			};
@@ -349,7 +337,6 @@
 				055120D219F5513700ED3B74 /* BCService.swift in Sources */,
 				055120CE19F5513700ED3B74 /* BCCharacteristic.swift in Sources */,
 				05415EEC1C57D6FD0005B68E /* BCSerialIO.swift in Sources */,
-				05BF91A51CFBF62700B78B12 /* FLBeaconManager.swift in Sources */,
 				055120F019F5513700ED3B74 /* ServiceProfileUtils.swift in Sources */,
 				055120EE19F5513700ED3B74 /* GnosusProfiles.swift in Sources */,
 				055120E419F5513700ED3B74 /* Uint8Extensions.swift in Sources */,
@@ -374,15 +361,12 @@
 				055120EA19F5513700ED3B74 /* BCServiceProfile.swift in Sources */,
 				4ED105C01C315C420034D5D2 /* UInt32Extensions.swift in Sources */,
 				055120EF19F5513700ED3B74 /* NordicProfiles.swift in Sources */,
-				05BF91A41CFBF62700B78B12 /* FLBeacon.swift in Sources */,
 				055120F119F5513700ED3B74 /* TISensorTagServiceProfiles.swift in Sources */,
 				055120E519F5513700ED3B74 /* BCCharacteristicProfile.swift in Sources */,
 				055120CD19F5513700ED3B74 /* BCCentralManager.swift in Sources */,
 				05BF91A81CFBF62700B78B12 /* FLLocationManager.swift in Sources */,
-				05BF91A61CFBF62700B78B12 /* FLBeaconRegion.swift in Sources */,
 				05BF91A71CFBF62700B78B12 /* FLCircularRegion.swift in Sources */,
 				055120DC19F5513700ED3B74 /* BCMutableCharacteristic.swift in Sources */,
-				05BF91A31CFBF62700B78B12 /* CLProximityExtension.swift in Sources */,
 				055120E219F5513700ED3B74 /* BCSerDe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,8 +465,7 @@
 		0551209619F5506000ED3B74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -490,18 +473,20 @@
 				INFOPLIST_FILE = BlueCapKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "us.gnos.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx10.11;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		0551209719F5506000ED3B74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -509,10 +494,13 @@
 				INFOPLIST_FILE = BlueCapKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "us.gnos.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx10.11;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

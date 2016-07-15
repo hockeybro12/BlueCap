@@ -253,40 +253,7 @@ public class BCPeripheralManager: NSObject, CBPeripheralManagerDelegate {
         }
     }
     
-    public func startAdvertising(region: FLBeaconRegion) -> Future<Void> {
-        return self.peripheralQueue.sync {
-            self._name = region.identifier
-            self.afterAdvertisingStartedPromise = Promise<Void>()
-            if !self.isAdvertising {
-                self.cbPeripheralManager.startAdvertising(region.peripheralDataWithMeasuredPower(nil))
-            } else {
-                self.afterAdvertisingStartedPromise.failure(BCError.peripheralManagerIsAdvertising)
-            }
-            return self.afterAdvertisingStartedPromise.future
-        }
-    }
-    
-    public func startAdvertising(region: FLBeaconRegion, name: String, uuids: [CBUUID]? = nil) -> Future<Void> {
-        return self.peripheralQueue.sync {
-            self._name = name
-            self.afterAdvertisingStartedPromise = Promise<Void>()
-            if !self.isAdvertising {
-                let beaconAdvertisementData = region.peripheralDataWithMeasuredPower(nil)
-                var advertisementData : [String:AnyObject] = [CBAdvertisementDataLocalNameKey:name]
-                if let uuids = uuids {
-                    advertisementData[CBAdvertisementDataServiceUUIDsKey] = uuids
-                }
-                for (key, value) in beaconAdvertisementData {
-                    advertisementData[key] = value
-                }
-                self.cbPeripheralManager.startAdvertising(advertisementData)
-            } else {
-                self.afterAdvertisingStartedPromise.failure(BCError.peripheralManagerIsAdvertising)
-            }
-            return self.afterAdvertisingStartedPromise.future
-        }
-    }
-    
+        
     public func stopAdvertising() -> Future<Void> {
         return self.peripheralQueue.sync {
             self._name = nil
@@ -358,15 +325,6 @@ public class BCPeripheralManager: NSObject, CBPeripheralManagerDelegate {
     // MARK: CBPeripheralManagerDelegate
     public func peripheralManagerDidUpdateState(peripheralManager: CBPeripheralManager) {
         self.didUpdateState(peripheralManager)
-    }
-    
-    public func peripheralManager(_: CBPeripheralManager, willRestoreState dict: [String:AnyObject]) {
-        var injectableServices: [CBMutableServiceInjectable]?
-        if let cbServices = dict[CBPeripheralManagerRestoredStateServicesKey] as? [CBMutableService] {
-            injectableServices = cbServices.map { $0 as CBMutableServiceInjectable }
-        }
-        let advertisements =  dict[CBPeripheralManagerRestoredStateAdvertisementDataKey] as? [String: AnyObject]
-        self.willRestoreState(injectableServices, advertisements: advertisements)
     }
     
     public func peripheralManagerDidStartAdvertising(_: CBPeripheralManager, error: NSError?) {
